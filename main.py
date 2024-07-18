@@ -22,8 +22,4 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--output", help="Output JSON file name (default: <presentation_name>.json)")
     parser.add_argument("-t", "--timeout", type=int, default=30, help="Timeout for API requests in seconds (default: 30)")
     args = parser.parse_args()
-
-    if not os.environ.get('OPENAI_API_KEY'):
-        print("Error: OPENAI_API_KEY environment variable is not set")
-    else:
-        asyncio.run(main(args))
+    asyncio.run(main(args))
